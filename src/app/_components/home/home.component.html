@@ -1,0 +1,123 @@
+
+
+<ngb-carousel 
+[showNavigationArrows]="true" 
+[showNavigationIndicators]="true"
+interval="12000"
+[keyboard]="true"
+[pauseOnHover]="true"
+[wrap]="true"
+[activeId]="'secondSlide'">
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img class="imgCls" src="../../../assets/engr.jpeg" alt="Angular Carousel 1">
+    </div>
+    <div class="carousel-caption">
+      <h3>Title Goes Here</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="../../../assets/healthcare.jpeg" alt="Angular Carousel 2">
+    </div>
+    <div class="carousel-caption">
+      <h3>Title Goes Here</h3>
+      <p>Consectetur tortor volutpat pretium.</p>
+    </div>
+  </ng-template>
+</ngb-carousel>
+<!-- 
+    <main class="mt-5">
+      <div class="container"> -->
+        <!--Section: Content-->
+        <section class="sectionIntro">
+          <div class="row">
+            <div class="col-md-12 gx-5 mb-4">
+              <h2 class="IntroText">ARE YOU LOOKING FOR THE BEST, MOST TRUSTED AND EXPERIENCED OVERSEAS RECRUITMENT <p class="text-center">COMPANY IN PAKISTAN</p></h2>
+                <p class="text-center homeText"><strong> Welocme to Amigo Trading Corporation!</strong></p>
+                <p class="homeText">Overseas link international is well known for its expertise in recruiting professionals in medical and healthcare, information technology, engineering, automotive, shipping & freight, manufacturing, hospitality, hr & administration just to name a few. Overseas link international has its link offices in the Philippines, Indonesia, Srilanka, and Bangladesh. We have been sourcing the workforce for our clients from these regions through our link offices in these countries. We ensure that our clients get the right talent the first time–every time. We always strive to deliver the absolute highest quality placement anywhere in the world. With 17+ years of professional recruitment, our client base is spread across the gulf region.</p>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+        <section class="text-center clientCls">
+          <h4><strong>Featured Clients</strong></h4>
+
+          <div class="row">
+            <div class="col-lg-2" *ngFor="let item of clientsArray">
+              <div class="card">
+                <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                  <img
+                    src="https://mdbootstrap.com/img/new/standard/nature/184.jpg"
+                    class="img-fluid"
+                  />
+                  <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{item}}</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make up the bulk of the
+                    card's content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--Section: Content-->
+
+        <section class="recTypes">
+          <div class="card mb-3" style="max-width: 1500px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="./../../../assets/medicalHome.jpeg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Medical Recruitment</h5>
+                  <p class="card-text">People will always need health care, causing it to continue expanding. There are a variety of options within the field itself and this is where an individual must decide where they want to start and where they might want to ultimately end up. When considering a career that requires time spent in school, the student will look at the duration of the schooling and what level of income they will receive once in their chosen job. Usually the financial return reflects the money and effort put forth in school but, often times, there is tuition assistance available</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 1500px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="./../../../assets/engr.jpeg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Civil Engineering</h5>
+                  <p class="card-text">Job hunting is already a difficult process, and searching for a civil engineering job is almost as difficult as taking a class about the “mechanics of fatigue and fracture.” Yikes! Obtaining a civil engineer job abroad will help broaden your pool of options and opportunity, as well as equip you with an international perspective of how to put the hammer to the nail. Civil engineering job opportunities come in all shapes and sizes - with different approach and manner.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-3" style="max-width: 1500px;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="./../../../assets/driver.jpeg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Drivers</h5>
+                  <p class="card-text">Job hunting is already a difficult process, and searching for a civil engineering job is almost as difficult as taking a class about the “mechanics of fatigue and fracture.” Yikes! Obtaining a civil engineer job abroad will help broaden your pool of options and opportunity, as well as equip you with an international perspective of how to put the hammer to the nail. Civil engineering job opportunities come in all shapes and sizes - with different approach and manner.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+    <!--Footer-->
+    <footer class="bg-light text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!--Footer-->

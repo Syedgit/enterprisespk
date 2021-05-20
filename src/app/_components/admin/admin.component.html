@@ -1,0 +1,21 @@
+<div class="container-fluid sidebarContent">
+  <div class="row">
+    <div class="col-3">
+      <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+        <ul class="nav sidebar-nav">
+            <li>
+              <a class="nav-link" [routerLink]="['/admin/add-details']" routerLinkActive="active">Add</a>
+            </li>
+            <li>
+              <a class="nav-link" [routerLink]="['/admin/view-details']" routerLinkActive="active">View</a>
+            </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="col-8">
+      <div class ="container-fluid">
+      <router-outlet></router-outlet>
+     </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 400px;
+  margin: 0;
+  padding-top: 50px;
+  border: 10px 10px 10px 10px;
+  border-color: black;
+}
+
+.sidebar-nav li {
+  position: relative; 
+  line-height: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.sidebar-nav li:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  height: 100%;
+  width: 3px;
+  background-color: #0c0b0b2c;
+
+}
+
+.sidebar-nav li a {
+  display: block;
+  color: rgb(15, 11, 11);
+  text-decoration: none;
+  padding: 10px 15px 10px 30px;    
+}

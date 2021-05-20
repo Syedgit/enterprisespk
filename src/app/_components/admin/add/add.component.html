@@ -1,0 +1,47 @@
+<form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="saveClient()">
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+        <label for="selectedOption">Client/Jobs</label>
+        <select class="form-control" formControlName="selectedOption">
+          <option *ngFor="let o of this.dropdownOptions">
+             {{o.val}}
+          </option>
+       </select>
+     </div>  
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomClientName">Client Name</label>
+      <input type="text" class="form-control" formControlName="clientName" placeholder="Client Name" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomRName">Recruitment Agency</label>
+      <input type="text" class="form-control" formControlName="agencyName" placeholder="Agency Name" value="" required>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomWqlaNum">Waqala #</label>
+      <input type="text" class="form-control" formControlName="waqalaNum" placeholder="Waqala Number" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomNumberOfVisas">Number of Visas</label>
+      <div class="input-group">
+        <input type="text" class="form-control" formControlName="numberOfVisas" placeholder="enter number Visas" aria-describedby="inputGroupPrepend" required>
+        <div class="invalid-feedback">
+          Please choose a username.
+        </div>
+      </div>
+    </div>
+  </div> 
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomCountry">Country</label>
+      <input type="text" class="form-control" formControlName="country" placeholder="Country" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="Submit">Submit form</button>
+</form>

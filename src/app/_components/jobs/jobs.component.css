@@ -1,0 +1,5 @@
+.jobsImage {
+  background-image: url('./../../../assets/jobsOpening.jpeg');
+  height: 500px;
+  width: 100%; /* responsive */
+}
