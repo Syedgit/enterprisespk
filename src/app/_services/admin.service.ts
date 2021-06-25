@@ -7,12 +7,11 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  private  url = "/api/saveClients";
+  private  url = "http://localhost:9001";
 
   saveClientJobs(data) {
         let options = this.createRequestOptions();
-        console.log("Service", data);
-        return this.http.post(this.url, data, { headers: options });
+        return this.http.post(`${this.url}/api/saveClients`, data, { headers: options });
     }
 
     private createRequestOptions() {
@@ -20,5 +19,10 @@ export class AdminService {
             "Content-Type": "application/json"
         });
         return headers;
+    }
+
+  getClients()  { 
+    console.log("GET Service>>>>>>>>>");
+      return this.http.get(`${this.url}/getClients`) 
     }
 }

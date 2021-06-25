@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import { AdminService } from './../../../_services/admin.service';
 @Component({
   selector: 'app-view',
   templateUrl: './view.component.html',
@@ -8,17 +8,18 @@ import {HttpClient} from '@angular/common/http';
 
 export class ViewComponent implements OnInit {
   CLIENTS: any = []
-  constructor(private http: HttpClient) {}
+  constructor(private adminService: AdminService) {}
 
   ngOnInit(): void {
+    this.getAllData();
   }
 
   private getAllData() {
-    this.http
-      .get('http://localhost:3000/customers')
+    this.adminService
+      .getClients()
       .subscribe(
         posts => {
-          console.log('GET all Data works');
+          console.log('GET all Data works', posts);
           this.CLIENTS = posts;    // <<<<< Here is the problem ************ How can I to Fix it.
   
         });

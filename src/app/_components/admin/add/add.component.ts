@@ -25,7 +25,12 @@ export class AddComponent implements OnInit {
   }
 
   saveClient() {
-    this.adminService.saveClientJobs(this.form.value);
+    // this.adminService.saveClientJobs(this.form.value);
+    this.adminService.saveClientJobs(this.form.value).subscribe(data => {
+      console.log("use data here", data);
+    }, err => {
+       console.log("check if any err", err);
+    })
   }
 
   onSelectChange($event) {

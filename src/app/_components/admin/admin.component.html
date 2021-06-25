@@ -1,7 +1,7 @@
 <div class="container-fluid sidebarContent">
   <div class="row">
-    <div class="col-3">
-      <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+    <div class="col-3" id="sidebar-wrapper">
+      <nav class="navbar navbar-inverse navbar-fixed-top"  role="navigation">
         <ul class="nav sidebar-nav">
             <li>
               <a class="nav-link" [routerLink]="['/admin/add-details']" routerLinkActive="active">Add</a>
@@ -13,7 +13,7 @@
       </nav>
     </div>
     <div class="col-8">
-      <div class ="container-fluid">
+      <div class ="container-fluid adminMainContent">
       <router-outlet></router-outlet>
      </div>
     </div>

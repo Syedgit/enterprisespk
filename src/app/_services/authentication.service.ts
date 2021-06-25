@@ -13,6 +13,7 @@ import { User } from 'src/app/_models/user.model';
 })
 export class AuthenticationService {
   public apiresponse: any;
+  private  url = "http://localhost:9001";
   constructor(
     private httpClient: HttpClient,
     private router: Router
@@ -39,10 +40,11 @@ export class AuthenticationService {
 
   login(username: string, password: string)
   {
-    return this.httpClient.post<any>('/Authentication/authenticate', {username, password})
+    return this.httpClient.post<any>(`${this.url}/users/authenticate`, {username, password})
                           .pipe(
                             map((response: any) => {
                             const user = response.data;
+                            this.router.navigateByUrl('/home');
                             return response;
 
                           }
