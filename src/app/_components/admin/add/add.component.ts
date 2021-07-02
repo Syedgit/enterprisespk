@@ -9,6 +9,7 @@ import { AdminService } from './../../../_services/admin.service';
 export class AddComponent implements OnInit {
   form: FormGroup;
   dropdownOptions = [];
+  selectedValue: string = "";
   constructor(public fb: FormBuilder, private adminService: AdminService) {
     this.form = this.fb.group({
       clientName: [''],
@@ -16,7 +17,8 @@ export class AddComponent implements OnInit {
       waqalaNum: [''],
       numberOfVisas: [''],
       country: [''],
-      selectedOption: ['']
+      selectedOption: [''],
+      jobName: ['']
     })
   }
 

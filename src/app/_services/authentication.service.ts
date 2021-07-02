@@ -41,14 +41,14 @@ export class AuthenticationService {
   login(username: string, password: string)
   {
     return this.httpClient.post<any>(`${this.url}/users/authenticate`, {username, password})
-                          .pipe(
-                            map((response: any) => {
-                            const user = response.data;
-                            this.router.navigateByUrl('/home');
-                            return response;
+            .pipe(
+              map((response: any) => {
+              const user = response.data;
+              this.router.navigateByUrl('/admin');
+              return response;
 
-                          }
-                          ));
+            }
+      ));
   }
 
   logout() {
