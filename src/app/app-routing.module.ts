@@ -7,6 +7,8 @@ import { AdminComponent } from './_components/admin/admin.component';
 import { AddComponent } from './_components/admin/add/add.component';
 import { ViewComponent } from './_components/admin/view/view.component';
 import { JobsComponent } from './_components/jobs/jobs.component';
+import { AddContactsComponent } from './_components/admin/add-contacts/add-contacts.component';
+import { ContactUsComponent } from './_components/contact-us/contact-us.component';
 
 
   const routes: Routes = [
@@ -22,6 +24,10 @@ import { JobsComponent } from './_components/jobs/jobs.component';
       {
         path: "view-details",
         component: ViewComponent
+      },
+      {
+        path: "add-contacts",
+        component: AddContactsComponent
       }
     ]
    },
@@ -29,6 +35,10 @@ import { JobsComponent } from './_components/jobs/jobs.component';
      path: "jobs",
      component: JobsComponent
    },
+   {
+    path: "contact-us",
+    component: ContactUsComponent
+  },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
   ];
 

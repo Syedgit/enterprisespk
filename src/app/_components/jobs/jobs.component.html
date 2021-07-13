@@ -1,45 +1,28 @@
 <section>
-<div class="jobsImage"></div>
-  </section>
+  <div class="jobsImage"></div>
+</section>
   <hr class="my-5" />
   <section>
-    Display table here for job openings
-    <div class="card">
-      <div class="card-header">
-        Featured
-      </div>
-      <div class="card-body">
-        <table class="table">
-          <thead class="table-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Client Name</th>
-              <th scope="col">Number of Visas</th>
-              <th scope="col">Country</th>
-              <th scope="col">Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+    <table class="table">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Job Name</th>
+          <th scope="col">Skills</th>
+          <th scope="col">Experience</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of JOBS.data">
+          <th scope="row">1</th>
+          <td>{{data.jobName}}</td>
+          <td>{{data.skills}}</td>
+          <td>{{data.experience}}</td>
+          <td>{{data.salary}}</td>
+          <td>{{data.country}}</td>
+        </tr>
+      </tbody>
+    </table>
   </section>

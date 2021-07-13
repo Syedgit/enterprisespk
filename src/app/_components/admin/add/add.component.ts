@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { AdminService } from './../../../_services/admin.service';
 @Component({
   selector: 'app-add',
@@ -18,16 +18,18 @@ export class AddComponent implements OnInit {
       numberOfVisas: [''],
       country: [''],
       selectedOption: [''],
-      jobName: ['']
+      jobName: [''],
+      skills:[''],
+      experience:[''],
+      salary:['']
     })
   }
 
   ngOnInit(): void {
-    this.dropdownOptions = [{id: 0, val: "client"}, {id: 1, val:"Jobs"}];
+    this.dropdownOptions = [{id: 0, val: "Client"}, {id: 1, val:"Jobs"}];
   }
 
   saveClient() {
-    // this.adminService.saveClientJobs(this.form.value);
     this.adminService.saveClientJobs(this.form.value).subscribe(data => {
       console.log("use data here", data);
     }, err => {
@@ -38,5 +40,7 @@ export class AddComponent implements OnInit {
   onSelectChange($event) {
   
   }
+
+
 
 }

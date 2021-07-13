@@ -1,4 +1,4 @@
-<form class="needs-validation" novalidate [formGroup]="form" (ngSubmit)="saveClient()">
+<form class="needs-validation" #theForm="ngForm" novalidate [formGroup]="form" (ngSubmit)="saveClient(); theForm.resetForm()">
   <div class="form-row">
     <div class="col-md-6 mb-3">
         <label for="selectedOption">Client/Jobs</label>
@@ -9,21 +9,30 @@
        </select>
      </div>  
   </div>
-  <div class="form-row">
+  <!-- CLient Form-->
+  <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
     <div class="col-md-6 mb-3">
       <label for="validationCustomClientName">Client Name</label>
       <input type="text" class="form-control" formControlName="clientName" placeholder="Client Name" value="">
-    </div>
-    <div class="col-md-6 mb-3" *ngIf="selectedValue == 'Jobs'">
-      <label for="validationCustomJobName">Job Name</label>
-      <input type="text" class="form-control" formControlName="jobName" placeholder="Job Name" value="">
     </div>
     <div class="col-md-6 mb-3">
       <label for="validationCustomRName">Recruitment Agency</label>
       <input type="text" class="form-control" formControlName="agencyName" placeholder="Agency Name" value="" required>
     </div>
   </div>
-  <div class="form-row">
+  <!-- Jobs Form-->
+  <div class="form-row" *ngIf="selectedValue == 'Jobs'">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomJobName">Job Title</label>
+      <input type="text" class="form-control" formControlName="jobName" placeholder="Job Name" value="">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomSkills">Skills Required</label>
+      <input type="text" class="form-control" formControlName="skills" placeholder="Skills" value="" required>
+    </div>
+  </div>
+  <!--Client Form -->
+  <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
     <div class="col-md-6 mb-3">
       <label for="validationCustomWqlaNum">Waqala #</label>
       <input type="text" class="form-control" formControlName="waqalaNum" placeholder="Waqala Number" value="" required>
@@ -38,6 +47,20 @@
       </div>
     </div>
   </div> 
+  <!--Jobs Form-->
+  <div class="form-row" *ngIf="selectedValue == 'Jobs'">
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomExperience">Experience</label>
+      <input type="text" class="form-control" formControlName="experience" placeholder="Years of Experience" value="" required>
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="validationCustomSalary">Salary</label>
+      <div class="input-group">
+        <input type="text" class="form-control" formControlName="salary" placeholder="salary" aria-describedby="inputGroupPrepend" required>
+      </div>
+    </div>
+  </div> 
+  <!--Client/Jobs Form-->
   <div class="form-row">
     <div class="col-md-6 mb-3">
       <label for="validationCustomCountry">Country</label>
