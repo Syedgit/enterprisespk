@@ -15,7 +15,7 @@ export class AddContactsComponent implements OnInit {
       address: [''],
       city: [''],
       province: [''],
-      Email: [''],
+      email: [''],
       phone: ['']
     })
   }

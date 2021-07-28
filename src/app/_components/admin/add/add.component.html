@@ -1,74 +1,80 @@
-<form class="needs-validation" #theForm="ngForm" novalidate [formGroup]="form" (ngSubmit)="saveClient(); theForm.resetForm()">
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-        <label for="selectedOption">Client/Jobs</label>
-        <select class="form-control" formControlName="selectedOption" [(ngModel)]="selectedValue">
-          <option *ngFor="let o of this.dropdownOptions">
-             {{o.val}}
-          </option>
-       </select>
-     </div>  
-  </div>
-  <!-- CLient Form-->
-  <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomClientName">Client Name</label>
-      <input type="text" class="form-control" formControlName="clientName" placeholder="Client Name" value="">
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomRName">Recruitment Agency</label>
-      <input type="text" class="form-control" formControlName="agencyName" placeholder="Agency Name" value="" required>
-    </div>
-  </div>
-  <!-- Jobs Form-->
-  <div class="form-row" *ngIf="selectedValue == 'Jobs'">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomJobName">Job Title</label>
-      <input type="text" class="form-control" formControlName="jobName" placeholder="Job Name" value="">
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomSkills">Skills Required</label>
-      <input type="text" class="form-control" formControlName="skills" placeholder="Skills" value="" required>
-    </div>
-  </div>
-  <!--Client Form -->
-  <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomWqlaNum">Waqala #</label>
-      <input type="text" class="form-control" formControlName="waqalaNum" placeholder="Waqala Number" value="" required>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomNumberOfVisas">Number of Visas</label>
-      <div class="input-group">
-        <input type="text" class="form-control" formControlName="numberOfVisas" placeholder="enter number Visas" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
-          Please choose a username.
+<div class="card">
+  <div class="card-header">Add Clients or Jobs</div>
+  <div class="card-body">
+    <form class="needs-validation" #theForm="ngForm" novalidate [formGroup]="form" (ngSubmit)="saveClient(); theForm.resetForm()">
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+            <label for="selectedOption">Client/Jobs</label>
+            <select class="form-control" formControlName="selectedOption" placeholder="Select Option" [(ngModel)]="selectedValue">
+              <option [ngValue]="null" disabled>Select Option</option>
+              <option *ngFor="let o of this.dropdownOptions" [value]="o.val">
+                 {{o.val}}
+              </option>
+           </select>
+         </div>  
+      </div>
+      <!-- CLient Form-->
+      <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomClientName">Client Name</label>
+          <input type="text" class="form-control" formControlName="clientName" placeholder="Client Name" value="">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomRName">Recruitment Agency</label>
+          <input type="text" class="form-control" formControlName="agencyName" placeholder="Agency Name" value="" required>
         </div>
       </div>
-    </div>
-  </div> 
-  <!--Jobs Form-->
-  <div class="form-row" *ngIf="selectedValue == 'Jobs'">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomExperience">Experience</label>
-      <input type="text" class="form-control" formControlName="experience" placeholder="Years of Experience" value="" required>
-    </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomSalary">Salary</label>
-      <div class="input-group">
-        <input type="text" class="form-control" formControlName="salary" placeholder="salary" aria-describedby="inputGroupPrepend" required>
+      <!-- Jobs Form-->
+      <div class="form-row" *ngIf="selectedValue == 'Jobs'">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomJobName">Job Title</label>
+          <input type="text" class="form-control" formControlName="jobName" placeholder="Job Name" value="">
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomSkills">Skills Required</label>
+          <input type="text" class="form-control" formControlName="skills" placeholder="Skills" value="" required>
+        </div>
       </div>
-    </div>
-  </div> 
-  <!--Client/Jobs Form-->
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label for="validationCustomCountry">Country</label>
-      <input type="text" class="form-control" formControlName="country" placeholder="Country" required>
-      <div class="invalid-feedback">
-        Please provide a valid city.
+      <!--Client Form -->
+      <div class="form-row" *ngIf="selectedValue !== 'Jobs'">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomWqlaNum">Waqala #</label>
+          <input type="text" class="form-control" formControlName="waqalaNum" placeholder="Waqala Number" value="" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomNumberOfVisas">Number of Visas</label>
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="numberOfVisas" placeholder="enter number Visas" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Please choose a username.
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!--Jobs Form-->
+      <div class="form-row" *ngIf="selectedValue == 'Jobs'">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomExperience">Experience</label>
+          <input type="text" class="form-control" formControlName="experience" placeholder="Years of Experience" value="" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomSalary">Salary</label>
+          <div class="input-group">
+            <input type="text" class="form-control" formControlName="salary" placeholder="salary" aria-describedby="inputGroupPrepend" required>
+          </div>
+        </div>
+      </div> 
+      <!--Client/Jobs Form-->
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationCustomCountry">Country</label>
+          <input type="text" class="form-control" formControlName="country" placeholder="Country" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
       </div>
-    </div>
+      <button class="btn btn-primary" type="Submit">Submit form</button>
+    </form>
   </div>
-  <button class="btn btn-primary" type="Submit">Submit form</button>
-</form>
+</div>

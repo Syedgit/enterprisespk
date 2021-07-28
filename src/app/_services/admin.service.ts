@@ -11,6 +11,7 @@ export class AdminService {
 
   saveClientJobs(data) {
       let options = this.createRequestOptions();
+      console.log("SAVECLIENT", data);
       return this.http.post(`${this.url}/api/saveClients`, data, { headers: options });
     }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { AdminService } from 'src/app/_services/admin.service';
 
 @Component({
@@ -9,10 +10,12 @@ import { AdminService } from 'src/app/_services/admin.service';
 export class JobsComponent implements OnInit {
 
   JOBS: any = []
-  constructor(private adminService: AdminService) {}
+  public state = '';
+  constructor(private adminService: AdminService, private router: Router) {}
 
   ngOnInit(): void {
     this.getJobsData();
+    this.state = window.history.state.alarm;
   }
   
   private getJobsData() {
@@ -25,4 +28,11 @@ export class JobsComponent implements OnInit {
   
         });
     }
+
+  loadApplyJobPage(e,data) {
+   const navigationExtras: NavigationExtras = {
+    state: data
+    }
+   this.router.navigate(['/apply-job'], navigationExtras)
+  } 
 }

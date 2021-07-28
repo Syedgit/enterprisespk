@@ -9,6 +9,7 @@ import { ViewComponent } from './_components/admin/view/view.component';
 import { JobsComponent } from './_components/jobs/jobs.component';
 import { AddContactsComponent } from './_components/admin/add-contacts/add-contacts.component';
 import { ContactUsComponent } from './_components/contact-us/contact-us.component';
+import { ApplyJobComponent } from './_components/jobs/apply-job/apply-job.component';
 
 
   const routes: Routes = [
@@ -34,6 +35,10 @@ import { ContactUsComponent } from './_components/contact-us/contact-us.componen
    {
      path: "jobs",
      component: JobsComponent
+   },
+   {
+     path:"apply-job",
+     component: ApplyJobComponent
    },
    {
     path: "contact-us",

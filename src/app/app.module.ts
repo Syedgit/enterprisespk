@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JobsComponent } from './_components/jobs/jobs.component';
 import { AddContactsComponent } from './_components/admin/add-contacts/add-contacts.component';
 import { ContactUsComponent } from './_components/contact-us/contact-us.component';
+import { ApplyJobComponent } from './_components/jobs/apply-job/apply-job.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactUsComponent } from './_components/contact-us/contact-us.componen
     ViewComponent,
     JobsComponent,
     AddContactsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    ApplyJobComponent
   ],
   imports: [
     HttpClientModule,
